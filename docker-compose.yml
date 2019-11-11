@@ -1,0 +1,29 @@
+version: '2.1'
+
+services:
+  erstock-pos:
+    image: erstock-pos
+    container_name: erstock-pos
+    build: . 
+    environment:
+      APP_ID: erstock-pos
+      NODE_ENV: production
+      NODE_PORT: "3031"
+      Erdis_Log_URL: erdis-log:3003
+      Erdis_Mongo_IP: "erdis.eroglu.com:27017"
+      Erdis_Kafka_IP: "erdis.eroglu.com:9092"
+      Mongo_User: erdisAdmin:Erdis123*
+    ports:
+      - 3002:3031
+      - "9202:9231"
+    external_links:
+      - erdis-mongo
+    extra_hosts:
+      - "SERVERTR146:10.0.8.146"
+      - "SERVERTR13:192.168.0.13"
+    networks: 
+      - erdis
+    
+networks:
+  erdis:
+    external: true      
