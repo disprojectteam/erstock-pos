@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { conn } = require('../db/mongoose-erstore-pos');
+const { conn } = require('../db/mongoose-erstock-pos');
 
 const Status = Object.freeze({
     N: 'None',
@@ -8,6 +8,22 @@ const Status = Object.freeze({
     F: 'Failed',
     I: 'Invalid',
     E: 'Exist'
+});
+
+
+var inventTransSchema = new mongoose.Schema({
+    barcode: {
+        type: String
+    },
+    itemId: {
+        type: String
+    },
+    inventDimId: {
+        type: String
+    },
+    qty: {
+        type: Number
+    }
 });
 
 var inventDocumentSchema = new mongoose.Schema({
@@ -38,22 +54,6 @@ var inventDocumentSchema = new mongoose.Schema({
         default: 0
     },
     inventTrans: [inventTransSchema]
-});
-
-
-var inventTransSchema = new mongoose.Schema({
-    barcode: {
-        type: String
-    },
-    itemId: {
-        type: String
-    },
-    inventDimId: {
-        type: String
-    },
-    qty: {
-        type: Number
-    }
 });
 
 

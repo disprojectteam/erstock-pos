@@ -14,8 +14,8 @@ services:
       Erdis_Kafka_IP: "erdis.eroglu.com:9092"
       Mongo_User: erdisAdmin:Erdis123*
     ports:
-      - 3002:3031
-      - "9202:9231"
+      - 3031:3031
+      - "9231:9231"
     external_links:
       - erdis-mongo
     extra_hosts:

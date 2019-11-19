@@ -9,7 +9,7 @@ mongoose.set('useFindAndModify', false);
 //mongoose.Promise = global.Promise;
 
 
-    var conn = mongoose.createConnection(`mongodb://${"erdisAdmin:Erdis123*"}@${"erdis.eroglu.com:27017"}/ErstorePos?authSource=admin`, {
+    var conn = mongoose.createConnection(`mongodb://${"erdisAdmin:Erdis123*"}@${"erdis.eroglu.com:27017"}/ErstockPos?authSource=admin`, {
         useCreateIndex: true,
         useNewUrlParser: true,
         useUnifiedTopology: true
