@@ -23,6 +23,9 @@ var inventTransSchema = new mongoose.Schema({
     },
     qty: {
         type: Number
+    },
+    reserveQty: {
+        type: Number
     }
 });
 
