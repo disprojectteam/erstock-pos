@@ -24,7 +24,7 @@ var inventTransSchema = new mongoose.Schema({
     qty: {
         type: Number
     },
-    reserveQty: {
+    reservedQty: {
         type: Number
     }
 });
