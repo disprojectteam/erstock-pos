@@ -7,7 +7,7 @@ const { TraceLog } = require('../../models/traceLog');
 // post / 
 router.post('/', async (req, res) => {
     try {
-        var body = _.pick(req.body, ['docRefId', 'docType', 'storeId', 'numberOfBarcode', 'inventTrans', 'sentBy'])
+        var body = _.pick(req.body, ['docRefId', 'docType', 'storeId', 'totalQtyAbs', 'isReservation', 'inventTrans', 'sentBy'])
         var inventDocument = new InventDocument(body)
         await inventDocument.save()
         await res.status(200).send()
