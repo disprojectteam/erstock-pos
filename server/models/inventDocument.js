@@ -24,7 +24,7 @@ var inventTransSchema = new mongoose.Schema({
     qty: {
         type: Number
     },
-    reserveQty: {
+    reservedQty: {
         type: Number
     }
 });
@@ -39,7 +39,7 @@ var inventDocumentSchema = new mongoose.Schema({
     storeId: {
         type: String
     },
-    numberOfBarcode: {
+    totalQtyAbs: {
         type: Number
     },
     status: {
@@ -52,9 +52,19 @@ var inventDocumentSchema = new mongoose.Schema({
     completedAt: {
         type: Date
     },
+    completedLines: {
+        type: Array
+    },
     errorCount: {
         type: Number,
         default: 0
+    },
+    isReservation: {
+        type: Boolean
+    },
+    inventTransStatus: {
+        type: String,
+        enum: Object.values(Status)
     },
     inventTrans: [inventTransSchema]
 });
