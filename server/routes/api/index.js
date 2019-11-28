@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const _ = require('lodash');
+const inventSum = require('./inventSum');
 const inventDocument = require('./inventDocument');
 const { ApiQueue } = require('./../../models/apiQueue');
 const { TraceLog } = require('./../../models/traceLog');
@@ -7,7 +8,7 @@ const { TraceLog } = require('./../../models/traceLog');
 
 
 router.use('/inventDocument', inventDocument.router);
-
+router.use('/inventSum', inventSum.router);
 
 // post / commit
 router.post('/commit/', async (req, res) => {
