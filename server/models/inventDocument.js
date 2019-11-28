@@ -45,6 +45,7 @@ var inventDocumentSchema = new mongoose.Schema({
     status: {
         type: String,
         enum: Object.values(Status),
+        defaut:"None"
     },
     createdTime: {
         type: Date
@@ -64,7 +65,8 @@ var inventDocumentSchema = new mongoose.Schema({
     },
     inventTransStatus: {
         type: String,
-        enum: Object.values(Status)
+        enum: Object.values(Status),
+        defaut:"None"
     },
     inventTrans: [inventTransSchema]
 });
