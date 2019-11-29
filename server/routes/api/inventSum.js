@@ -7,7 +7,7 @@ const { InventSum } = require('../../models/inventSum');
 router.get('/:storeId',async (req, res) => {
     try {
         let _storeId = req.params.storeId;
-        const result=await InventSum.find({ storeId:_storeId });
+        const result=await InventSum.find({ storeId:_storeId }).select({"_id":0,"errorCount":0,"storeId":0,"lastModifiedTime":0,"createdTime":0,"__v":0});
         res.send({ result: result})
         res.end();
     } catch (err) {
@@ -22,7 +22,7 @@ router.get('/:storeId/:barcode',  async (req, res) => {
     try {
         let _storeId = req.params.storeId;
         let _barcode = req.params.barcode;
-        const result=await InventSum.find({ storeId:_storeId ,barcode:_barcode});
+        const result=await InventSum.find({ storeId:_storeId ,barcode:_barcode}).select({"_id":0,"errorCount":0,"storeId":0,"lastModifiedTime":0,"createdTime":0,"__v":0,"barcode":0});
         res.send({ result: result })
         res.end();
     } catch (err) {
