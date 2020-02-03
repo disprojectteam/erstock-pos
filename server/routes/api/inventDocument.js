@@ -12,7 +12,30 @@ router.post('/', async (req, res) => {
         await inventDocument.save()
         await res.status(200).send()
     } catch (error) {
-        res.status(400).send(error)
+        if(error.name == 'MongoError')
+        {
+            res.status(400).send('Database error occured.(1)')
+        }
+        else if(error.name == 'CastError')
+        {
+            res.status(400).send('Data model error occured.(1)')
+        }
+        else if(error.name == 'TypeError')
+        {
+            res.status(500).send('Type error occured.(1)')
+        }
+        else if(error.name == 'StatusCodeError' && error.message.search('E11000') >= 0 ) 
+        {
+            res.status(400).send('Data duplication error occured.(1)')
+        }
+        else if(error.name == 'ValidationError')
+        {
+            res.status(403).send(error.message)
+        }
+        else
+        {
+            res.status(400).send(error.message)
+        }
         TraceLog.addLogData(error, " ", __filename)
     }
 });
