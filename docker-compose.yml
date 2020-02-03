@@ -18,6 +18,7 @@ services:
     external_links:
       - erdis-mongo
     extra_hosts:
+      - "SERVERTR149:10.0.8.149"
       - "SERVERTR146:10.0.8.146"
       - "SERVERTR13:192.168.0.13"
     networks: 
