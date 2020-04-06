@@ -9,7 +9,7 @@ mongoose.set('useFindAndModify', false);
 //mongoose.Promise = global.Promise;
 
 
-    var conn = mongoose.createConnection(`mongodb://${process.env.Mongo_User}@${process.env.Erdis_Mongo_IP}/ErstockPos?authSource=admin`, {
+    var conn = mongoose.createConnection(`mongodb://${process.env.Mongo_User}@${process.env.Erdis_Mongo_IP}/?ssl=true&appName=@erstock@`, {
         useCreateIndex: true,
         useNewUrlParser: true,
         useUnifiedTopology: true
