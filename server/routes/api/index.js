@@ -3,7 +3,7 @@ const _ = require('lodash');
 const inventSum = require('./inventSum');
 const inventDocument = require('./inventDocument');
 const { ApiQueue } = require('./../../models/apiQueue');
-const { TraceLog } = require('./../../models/traceLog');
+// const { TraceLog } = require('./../../models/traceLog');
 
 
 
@@ -19,7 +19,7 @@ router.post('/commit/', async (req, res) => {
         await res.status(200).send(result)
     } catch (error) {
         res.status(400).send(error);
-        TraceLog.addLogData(error, " ", __filename);
+        // TraceLog.addLogData(error, " ", __filename);
     }
 });
 

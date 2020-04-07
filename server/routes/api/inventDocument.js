@@ -2,7 +2,7 @@
 const { InventDocument } = require('../../models/inventDocument');
 const router = require('express').Router();
 const _ = require('lodash');
-const { TraceLog } = require('../../models/traceLog');
+// const { TraceLog } = require('../../models/traceLog');
 
 // post / 
 router.post('/', async (req, res) => {
@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
         {
             res.status(400).send(error.message)
         }
-        TraceLog.addLogData(error, " ", __filename)
+        // TraceLog.addLogData(error, " ", __filename)
     }
 });
 

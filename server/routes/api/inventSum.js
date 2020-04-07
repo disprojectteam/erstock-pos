@@ -1,4 +1,4 @@
-const { TraceLog } = require('./../../models/traceLog');
+// const { TraceLog } = require('./../../models/traceLog');
 const router = require('express').Router();
 const { InventSum } = require('../../models/inventSum');
 
@@ -13,7 +13,7 @@ router.get('/:storeId',async (req, res) => {
     } catch (err) {
         res.status(400).send(err.error);
         res.end();
-        TraceLog.addLogData(err, " ", __filename);
+        // TraceLog.addLogData(err, " ", __filename);
     }
 });
 
@@ -28,7 +28,7 @@ router.get('/:storeId/:barcode',  async (req, res) => {
     } catch (err) {
         res.status(400).send(err.error);
         res.end();
-        TraceLog.addLogData(err, " ", __filename);
+        // TraceLog.addLogData(err, " ", __filename);
     }
 });
 
