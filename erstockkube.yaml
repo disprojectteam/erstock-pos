@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: erstock
+spec:
+  selector:
+    matchLabels:
+      app: erstock
+  replicas: 2
+  template:
+    metadata:
+      labels:
+          app: erstock
+    spec:
+      containers:
+      - name: erstock
+        image: colinsposacr.azurecr.io/disprojectteam/erstock:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+        - name: NODE_ENV
+          value: "development"
+        - name: NODE_PORT
+          value: "8080"
+        - name: Erdis_Mongo_IP
+          value: "erstock.mongo.cosmos.azure.com:10255"
+        - name: Erdis_Kafka_IP
+          value: "erdiskafka.default.svc.cluster.local:9092"
+        - name: Mongo_User
+          value: "erstock:8gC7Ba3DqnagVxGn7jHbTGRb2JvwQzhOus6ieKdo14gn0GMf4OiIulU1o94CArLIyfXgeDQ5uOmDQtQ5rv8SAg%3D%3D"
