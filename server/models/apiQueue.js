@@ -15,7 +15,8 @@ var ApiQueueSchema = new mongoose.Schema({
         default: false
     },
     createdAt: {
-        type: Date
+        type: Date,
+        default:Date.now()
     },
     sentAt: {
         type: Date
@@ -28,11 +29,7 @@ var ApiQueueSchema = new mongoose.Schema({
     }
 
 });
-ApiQueueSchema.pre('save', function (next) {
-    var apiQueue = this;
-    apiQueue.createdAt = Date.now(); // moment(Date.now()).format('DD-MM-YYYY');
-    next();
-});
+
 ApiQueueSchema.statics.add = function (_id, _documentName, _documentValue) {
     var apiQueue = this;
 

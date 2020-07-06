@@ -47,8 +47,9 @@ var inventDocumentSchema = new mongoose.Schema({
         enum: Object.values(Status),
         default: Status.N
     },
-    createdTime: {
-        type: Date
+    createdAt: {
+        type: Date,
+        default:Date.now()
     },
     completedAt: {
         type: Date
@@ -72,10 +73,7 @@ var inventDocumentSchema = new mongoose.Schema({
 });
 
 
-inventDocumentSchema.pre('save', function (next) {
-    this.createdTime = Date.now();
-    next();
-});
+
 
 Object.assign(inventDocumentSchema.statics, {
     Status
