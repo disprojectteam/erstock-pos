@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { conn } = require('../db/mongoose-erstock-pos');
 
 const Status = Object.freeze({
     N: 'None',
@@ -80,6 +79,6 @@ Object.assign(inventDocumentSchema.statics, {
 });
 
 
-var InventDocument = conn.model('InventDocument', inventDocumentSchema);
+var InventDocument = mongoose.model('InventDocument', inventDocumentSchema);
 
-module.exports = { InventDocument } 
+module.exports = InventDocument 

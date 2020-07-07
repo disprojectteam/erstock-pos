@@ -1,4 +1,4 @@
-const { InventDocument } = require('../models/inventDocument');
+const InventDocument  = require('../db/models/inventDocument');
 class dataService {
 
     saveData(graph) {

@@ -4,11 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node --inspect=0.0.0.0:9231 server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --inspect=0.0.0.0:9231 src/server.js",
+    "dev": "env-cmd ./config/dev.env node --inspect=0.0.0.0:9231 src/server.js",
+    "localtest": "env-cmd ./config/test.env node --inspect=0.0.0.0:9231 src/server.js",
+    "test": "env-cmd ./config/test.env jest --watch"
   },
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "env-cmd": "^8.0.2",
+    "jest": "^23.6.0",
+    "nodemon": "^1.19.4",
+    "supertest": "^3.4.1"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "erdis": "^1.0.9",

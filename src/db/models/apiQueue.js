@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { conn } = require('../db/mongoose-erstock-pos');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 var ApiQueueSchema = new mongoose.Schema({
@@ -47,6 +46,6 @@ ApiQueueSchema.statics.add = function (_id, _documentName, _documentValue) {
 
 ApiQueueSchema.index({ documentName: 1, refObjectId: 1 }, { unique: true });
 
-var ApiQueue = conn.model('ApiQueue', ApiQueueSchema);
+var ApiQueue = mongoose.model('ApiQueue', ApiQueueSchema);
 
-module.exports = { ApiQueue } 
+module.exports = ApiQueue 

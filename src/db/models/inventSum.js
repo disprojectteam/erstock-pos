@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { conn } = require('../db/mongoose-erstock-pos');
 
 const Status = Object.freeze({
     N: 'None',
@@ -55,6 +54,6 @@ Object.assign(inventSumSchema.statics, {
 });
 
 
-var InventSum = conn.model('InventSum', inventSumSchema);
+var InventSum = mongoose.model('InventSum', inventSumSchema);
 
-module.exports = { InventSum } 
+module.exports = InventSum 

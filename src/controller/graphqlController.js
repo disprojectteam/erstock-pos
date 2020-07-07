@@ -1,6 +1,6 @@
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
-const { InventDocument } = require('../models/inventDocument');
+const InventDocument = require('../db/models/inventDocument');
 const  graphqlDataService  = require('../service/graphqlDataService');
 
 // Construct a schema, using GraphQL schema language

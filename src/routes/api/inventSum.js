@@ -1,6 +1,6 @@
-const { TraceLog } = require('./../../models/traceLog');
+const { TraceLog } = require('./../../db/models/traceLog');
 const router = require('express').Router();
-const { InventSum } = require('../../models/inventSum');
+const InventSum = require('../../db/models/inventSum');
 
 
 // GET /lookupChange

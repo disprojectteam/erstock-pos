@@ -1,8 +1,8 @@
 
-const { InventDocument } = require('../../models/inventDocument');
+const InventDocument = require('../../db/models/inventDocument');
 const router = require('express').Router();
 const _ = require('lodash');
-const { TraceLog } = require('../../models/traceLog');
+const { TraceLog } = require('../../db/models/traceLog');
 
 // post / 
 router.post('/', async (req, res) => {
