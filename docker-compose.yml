@@ -14,8 +14,8 @@ services:
       Mongo_User: erdisAdmin:Erdis123*
       Mongo_Db: "ErstockPos"
     ports:
-      - 3031:3031
-      - "9231:9231"
+      - 3035:3035
+      - "9235:9235"
     external_links:
       - erdis-mongo
     extra_hosts:
