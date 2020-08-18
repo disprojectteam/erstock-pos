@@ -35,10 +35,6 @@ var inventSumSchema = new mongoose.Schema({
     lastModifiedTime: {
         type: Date
     },
-    createdAt: {
-        type: Date,
-        default:Date.now()
-    },
     completedAt: {
         type: Date
     },
@@ -46,7 +42,7 @@ var inventSumSchema = new mongoose.Schema({
         type: Number,
         default: 0
     }
-});
+}, { timestamps: true });
 
 
 Object.assign(inventSumSchema.statics, {

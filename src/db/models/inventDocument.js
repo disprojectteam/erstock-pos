@@ -46,10 +46,6 @@ var inventDocumentSchema = new mongoose.Schema({
         enum: Object.values(Status),
         default: Status.N
     },
-    createdAt: {
-        type: Date,
-        default:Date.now()
-    },
     completedAt: {
         type: Date
     },
@@ -69,7 +65,7 @@ var inventDocumentSchema = new mongoose.Schema({
         defaut: Status.N
     },
     inventTrans: [inventTransSchema]
-});
+}, { timestamps: true });
 
 
 

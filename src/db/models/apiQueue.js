@@ -13,10 +13,6 @@ var ApiQueueSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    createdAt: {
-        type: Date,
-        default:Date.now()
-    },
     sentAt: {
         type: Date
     },
@@ -27,7 +23,7 @@ var ApiQueueSchema = new mongoose.Schema({
         type: ObjectId
     }
 
-});
+}, { timestamps: true });
 
 ApiQueueSchema.statics.add = function (_id, _documentName, _documentValue) {
     var apiQueue = this;
